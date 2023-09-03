@@ -18,21 +18,23 @@ function playRound(playerSelection, computerSelection) {
     if (((playerSelection === "Scissors") && (computerSelection === "Rock")) || 
     ((playerSelection === "Paper") && (computerSelection === "Scissors")) ||
     ((playerSelection === "Rock") && (computerSelection === "Paper"))) {
-        return "Too bad you lose :(";
+        console.log("Too bad you lose :(");
     } else if (((playerSelection === "Scissors") && (computerSelection === "Paper")) ||
     ((playerSelection === "Rock") && (computerSelection === "Scissors")) ||
     ((playerSelection === "Paper") && (computerSelection === "Rock"))) {
         scoreCounter += 1;
-        return "You win!";
+        console.log("You win!");
     } else {
-        return "It's a tie!";
+        console.log("It's a tie!");
     }
   }
    
 const button = document.querySelectorAll("button");
-button.forEach(btn.addEventListener("click", function() {
-    playRound(button.value)
-}));
+button.forEach(btn => {btn.addEventListener("click", function() {
+    console.log(event.target.innerText);
+    playRound(event.target.innerText, getComputerChoice());
+    })
+});
 
 
 

@@ -15,13 +15,13 @@ let scoreCounter = 0;
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
-    if (((playerSelection.toLowerCase() === "scissors") && (computerSelection.toLowerCase() === "rock")) || 
-    ((playerSelection.toLowerCase() === "paper") && (computerSelection.toLowerCase() === "scissors")) ||
-    ((playerSelection.toLowerCase() === "rock") && (computerSelection.toLowerCase() === "paper"))) {
+    if (((playerSelection === "Scissors") && (computerSelection === "Rock")) || 
+    ((playerSelection === "Paper") && (computerSelection === "Scissors")) ||
+    ((playerSelection === "Rock") && (computerSelection === "Paper"))) {
         return "Too bad you lose :(";
-    } else if (((playerSelection.toLowerCase() === "scissors") && (computerSelection.toLowerCase() === "paper")) ||
-    ((playerSelection.toLowerCase() === "rock") && (computerSelection.toLowerCase() === "scissors")) ||
-    ((playerSelection.toLowerCase() === "paper") && (computerSelection.toLowerCase() === "rock"))) {
+    } else if (((playerSelection === "Scissors") && (computerSelection === "Paper")) ||
+    ((playerSelection === "Rock") && (computerSelection === "Scissors")) ||
+    ((playerSelection === "Paper") && (computerSelection === "Rock"))) {
         scoreCounter += 1;
         return "You win!";
     } else {
@@ -29,28 +29,28 @@ function playRound(playerSelection, computerSelection) {
     }
   }
    
+const button = document.querySelectorAll("button");
+button.forEach(btn.addEventListener("click", function() {
+    playRound(button.value)
+}));
 
-function game() {
-    for (i = 0; i < 5; i ++) {
-        let playerChoice = prompt("Make a choice! Rock, paper, or scissors?");
-        while (((playerChoice.toLowerCase() != "paper") &&
-        (playerChoice.toLowerCase() != "rock") &&
-        (playerChoice.toLowerCase() != "scissors"))) {
-            playerChoice = prompt("Enter a valid option. Rock, paper, or scissors?")
-            console.log(playerChoice);
-        }
+
+
+// function game() {
+//     for (i = 0; i < 5; i ++) {
+//         let playerChoice = c;
         
-        let computerChoice = getComputerChoice();
-        console.log(playerChoice);
-        console.log(computerChoice);
-        console.log(playRound(playerChoice, computerChoice));
-    }
-    console.log("Your score: " + scoreCounter + "/5");
-    if (scoreCounter >= 3) {
-        console.log("You won the game!")
-    } else {
-        console.log("Try harder next time.")
-    }
-}
+//         let computerChoice = getComputerChoice();
+//         console.log(playerChoice);
+//         console.log(computerChoice);
+//         console.log(playRound(playerChoice, computerChoice));
+//     }
+//     console.log("Your score: " + scoreCounter + "/5");
+//     if (scoreCounter >= 3) {
+//         console.log("You won the game!")
+//     } else {
+//         console.log("Try harder next time.")
+//     }
+// }
 
-game();
+// game();
